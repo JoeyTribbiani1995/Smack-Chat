@@ -158,6 +158,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="P5u-8s-Dth" eventType="touchUpInside" id="DUU-Wm-bqK"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q77-Gy-D7X">
                                 <rect key="frame" x="126.5" y="80" width="122.5" height="40"/>
@@ -208,6 +211,8 @@
                         <viewLayoutGuide key="safeArea" id="ZAu-5o-u0i"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="4cd-tk-EZf" id="ijm-gR-uHX"/>
+                        <outlet property="usernameTxt" destination="b17-3U-SSq" id="AIh-vA-TFF"/>
                         <segue destination="z3c-8I-q1S" kind="show" identifier="toCreateAccount" id="v7V-EP-ZdD"/>
                     </connections>
                 </viewController>
