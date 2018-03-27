@@ -19,6 +19,7 @@
 		D79B09E52067B2D700C097EA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D79B09E42067B2D700C097EA /* SWRevealViewController.m */; };
 		D79B09F32067BA5900C097EA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F22067BA5900C097EA /* ChatVC.swift */; };
 		D79B09F52067BA6E00C097EA /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F42067BA6E00C097EA /* ChannelVC.swift */; };
+		D7AA1BC72069DF2F007C2343 /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */; };
 		D7D8A4D5206928E400EFC24F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D8A4D4206928E400EFC24F /* AuthService.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		D79B09E42067B2D700C097EA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D79B09F22067BA5900C097EA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D79B09F42067BA6E00C097EA /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
 		D7D8A4D4206928E400EFC24F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				D729CB292067D7010038F359 /* GrandientView.swift */,
+				D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D75DE2B320688E5A0076C9CB /* CreateAccountVc.swift in Sources */,
 				D7D8A4D5206928E400EFC24F /* AuthService.swift in Sources */,
 				D729D81020688AFD004396AC /* LoginVC.swift in Sources */,
+				D7AA1BC72069DF2F007C2343 /* CustomBtn.swift in Sources */,
 				D79B09F32067BA5900C097EA /* ChatVC.swift in Sources */,
 				D79B09CF2067B08B00C097EA /* AppDelegate.swift in Sources */,
 				D79B09E52067B2D700C097EA /* SWRevealViewController.m in Sources */,

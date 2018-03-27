@@ -28,5 +28,5 @@ let USER_EMAIL = "userEmail"
 
 //url
 
-let BASE_URL = "http://localhost:3005/v1/account/register"
+let BASE_URL = "http://localhost:3005/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
