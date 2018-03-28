@@ -39,7 +39,11 @@ let HEADER = [
     "Content-Type" : "application/json;charset-utf-8"
 ]
 
+//colors
+let smackPurplePlaceHolder = #colorLiteral(red: 0.4352941176, green: 0.6902027726, blue: 0.8282268047, alpha: 0.5)
 
+//notification constants
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notiUserDataChanged")
 
 
 
