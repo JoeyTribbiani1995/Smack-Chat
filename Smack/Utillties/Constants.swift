@@ -17,6 +17,7 @@ typealias CompletionHandler = (_ Success : Bool) -> ()
 let TO_LOGIN = "toLogin"
 let TO_CREATE_ACCOUNT = "toCreateAccount"
 let UNWIND_TO_CHANNEL = "unwindToChannel"
+let TO_AVATAR_PICKER = "toCreateAccount"
 
 
 //user defaults
