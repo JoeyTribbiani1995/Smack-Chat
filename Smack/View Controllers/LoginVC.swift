@@ -25,14 +25,14 @@ class LoginVC: UIViewController {
     }
    
     @IBAction func loginBtnPressed(_ sender: UIButton) {
-//        guard let email = usernameTxt.text , usernameTxt.text != "" else { return }
-//        guard let password = passwordTxt.text , passwordTxt.text != "" else { return }
-//        
-//        AuthService.instance.loginUser(email: email, password: password) { (success) in
-//            if success {
-//                print("logged in successed !")
-//            }
-//        }
+        guard let email = usernameTxt.text , usernameTxt.text != "" else { return }
+        guard let password = passwordTxt.text , passwordTxt.text != "" else { return }
+        
+        AuthService.instance.loginUser(email: email, password: password) { (success) in
+            if success {
+                print("logged in successed !")
+            }
+        }
     }
     
     

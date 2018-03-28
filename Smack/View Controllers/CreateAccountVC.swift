@@ -82,17 +82,18 @@ class CreateAccountVC: UIViewController {
         let blue = CGFloat(arc4random_uniform(255))/255
         
         bgColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        //change value avatar to create a user
+        avatarColor = "[\(red),\(green),\(blue),1]"
+        
         UIView.animate(withDuration: 0.2){
             self.userImg.backgroundColor = self.bgColor
         }
-        
-        
-         //change value avatar to create a user
         
     }
     
     func setupView(){
         activity.isHidden = true
+        
         usernameTxt.attributedPlaceholder = NSAttributedString(string :"ussername" ,attributes:[NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
         emailTxt.attributedPlaceholder = NSAttributedString(string :"email" ,attributes:[NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
         passwordTxt.attributedPlaceholder = NSAttributedString(string :"password" ,attributes:[NSAttributedStringKey.foregroundColor:smackPurplePlaceHolder])
