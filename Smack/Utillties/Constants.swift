@@ -34,6 +34,7 @@ let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_ADD = "\(BASE_URL)user/add"
 let URL_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
+let URL_FIND_CHANNEL = "\(BASE_URL)channel/"
 
 //headers
 let HEADER = [
