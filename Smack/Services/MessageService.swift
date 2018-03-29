@@ -20,16 +20,7 @@ class MessageService {
         
         Alamofire.request(URL_FIND_CHANNEL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
-                
                 guard let data = response.data else { return }
-                
-//                do {
-//                    self.channels = try JSONDecoder().decode([Channel].self, from: data)
-//                }catch let error {
-//                    debugPrint(error as Any)
-//                }
-//
-//                print(self.channels)
                 
                 if let json = try! JSON(data: data).array {
                     for item in json {
