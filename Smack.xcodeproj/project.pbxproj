@@ -15,6 +15,7 @@
 		D7573621206B3D490021EB85 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7573620206B3D490021EB85 /* CircleImage.swift */; };
 		D75CD235206882E2006BDF36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75CD234206882E2006BDF36 /* Constants.swift */; };
 		D75DE2B320688E5A0076C9CB /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75DE2B220688E5A0076C9CB /* CreateAccountVC.swift */; };
+		D75EF10E206DC379007CDC02 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75EF10D206DC379007CDC02 /* SocketService.swift */; };
 		D77EC33E206C934700BB1469 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77EC33D206C934700BB1469 /* MessageService.swift */; };
 		D77EC340206C938E00BB1469 /* Channels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77EC33F206C938E00BB1469 /* Channels.swift */; };
 		D77EC342206CA0C100BB1469 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77EC341206CA0C100BB1469 /* ChannelCell.swift */; };
@@ -49,6 +50,7 @@
 		D7573620206B3D490021EB85 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		D75CD234206882E2006BDF36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D75DE2B220688E5A0076C9CB /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		D75EF10D206DC379007CDC02 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		D77EC33D206C934700BB1469 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		D77EC33F206C938E00BB1469 /* Channels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Channels.swift; path = Smack/Services/Channels.swift; sourceTree = SOURCE_ROOT; };
 		D77EC341206CA0C100BB1469 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				D7D8A4D4206928E400EFC24F /* AuthService.swift */,
 				D7C386C2206A1A6B00BF0461 /* UserDataService.swift */,
 				D77EC33D206C934700BB1469 /* MessageService.swift */,
+				D75EF10D206DC379007CDC02 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D75EF10E206DC379007CDC02 /* SocketService.swift in Sources */,
 				D7FB9CF6206B7AB300A4DA1E /* ProfileVC.swift in Sources */,
 				D77EC342206CA0C100BB1469 /* ChannelCell.swift in Sources */,
 				D729CB2A2067D7010038F359 /* GrandientView.swift in Sources */,
