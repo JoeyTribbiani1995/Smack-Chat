@@ -22,6 +22,8 @@ class ChannelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
+         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIF_CHANNELS_LOADED, object: nil)
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -64,6 +66,7 @@ class ChannelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
             loginBtn.setTitle("Login", for: .normal)
             userImageView.image = UIImage(named : "menuProfileIcon")
             userImageView.backgroundColor = UIColor.lightGray
+            tableView.reloadData()
         }
     }
     
@@ -89,13 +92,26 @@ class ChannelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
     }
     
     @IBAction func addChannelBtnPressed(_ sender: UIButton) {
-        let addChannelVC = AddChannelVC()
-        addChannelVC.modalPresentationStyle = .custom
-        present(addChannelVC, animated: true, completion: nil)
+        if AuthService.instance.isLoggedIn {
+            let addChannelVC = AddChannelVC()
+            addChannelVC.modalPresentationStyle = .custom
+            present(addChannelVC, animated: true, completion: nil)
+        }
     }
     
     
+    @objc func channelsLoaded(_ notif : Notification){
+        tableView.reloadData()
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.channels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIF_CHANNELS_SELECTED, object: nil)
+        
+        //animated go to chatvc 
+        self.revealViewController().revealToggle(animated: true)
+    }
     
     
     

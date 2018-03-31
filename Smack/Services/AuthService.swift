@@ -107,8 +107,8 @@ class AuthService {
                 //using swifty json
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
+                print("----------------------- : > create success")
                 completion(true)
-                
             }else {
                 completion(false)
                 debugPrint(response.result.error as Any)
