@@ -10,6 +10,7 @@
 		804643F8B2E331FC04A7A64B /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402D930BFC84BA2A3708B295 /* Pods_Smack.framework */; };
 		D729CB2A2067D7010038F359 /* GrandientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729CB292067D7010038F359 /* GrandientView.swift */; };
 		D729D81020688AFD004396AC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729D80F20688AFD004396AC /* LoginVC.swift */; };
+		D74384D6206F8BAE003F8880 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74384D5206F8BAE003F8880 /* Message.swift */; };
 		D757361D206B2A7C0021EB85 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757361C206B2A7C0021EB85 /* AvatarPickerVC.swift */; };
 		D757361F206B2E840021EB85 /* AvatarCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757361E206B2E840021EB85 /* AvatarCollectCell.swift */; };
 		D7573621206B3D490021EB85 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7573620206B3D490021EB85 /* CircleImage.swift */; };
@@ -29,6 +30,7 @@
 		D79B09F32067BA5900C097EA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F22067BA5900C097EA /* ChatVC.swift */; };
 		D79B09F52067BA6E00C097EA /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F42067BA6E00C097EA /* ChannelVC.swift */; };
 		D7AA1BC72069DF2F007C2343 /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */; };
+		D7C21445206FB0F500816EDF /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */; };
 		D7C386C3206A1A6B00BF0461 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C386C2206A1A6B00BF0461 /* UserDataService.swift */; };
 		D7C386C4206A1B2500BF0461 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C386C5206A1B2500BF0461 /* Alamofire.framework */; };
 		D7C386C6206A1B3100BF0461 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C386C7206A1B3100BF0461 /* SwiftyJSON.framework */; };
@@ -45,6 +47,7 @@
 		402D930BFC84BA2A3708B295 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D729CB292067D7010038F359 /* GrandientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandientView.swift; sourceTree = "<group>"; };
 		D729D80F20688AFD004396AC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D74384D5206F8BAE003F8880 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Smack/Services/Message.swift; sourceTree = SOURCE_ROOT; };
 		D757361C206B2A7C0021EB85 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		D757361E206B2E840021EB85 /* AvatarCollectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectCell.swift; sourceTree = "<group>"; };
 		D7573620206B3D490021EB85 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		D79B09F22067BA5900C097EA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D79B09F42067BA6E00C097EA /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
+		D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		D7C386C2206A1A6B00BF0461 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		D7C386C5206A1B2500BF0461 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C386C7206A1B3100BF0461 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +196,7 @@
 				D757361E206B2E840021EB85 /* AvatarCollectCell.swift */,
 				D7573620206B3D490021EB85 /* CircleImage.swift */,
 				D77EC341206CA0C100BB1469 /* ChannelCell.swift */,
+				D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D77EC33F206C938E00BB1469 /* Channels.swift */,
+				D74384D5206F8BAE003F8880 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -362,12 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C21445206FB0F500816EDF /* KeyboardBoundView.swift in Sources */,
 				D75EF10E206DC379007CDC02 /* SocketService.swift in Sources */,
 				D7FB9CF6206B7AB300A4DA1E /* ProfileVC.swift in Sources */,
 				D77EC342206CA0C100BB1469 /* ChannelCell.swift in Sources */,
 				D729CB2A2067D7010038F359 /* GrandientView.swift in Sources */,
 				D757361D206B2A7C0021EB85 /* AvatarPickerVC.swift in Sources */,
 				D79B09F52067BA6E00C097EA /* ChannelVC.swift in Sources */,
+				D74384D6206F8BAE003F8880 /* Message.swift in Sources */,
 				D7573621206B3D490021EB85 /* CircleImage.swift in Sources */,
 				D77EC33E206C934700BB1469 /* MessageService.swift in Sources */,
 				D75DE2B320688E5A0076C9CB /* CreateAccountVC.swift in Sources */,

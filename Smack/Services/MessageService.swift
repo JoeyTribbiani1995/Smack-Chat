@@ -50,6 +50,11 @@ class MessageService {
     }
     
     
+    func getAllMessageByChannel(channelId: String , completion : @escaping CompletionHandler){
+//        Alamofire.request(URL_GET_MESAGES, method: .get, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>)
+    }
+    
+    
     
     
 }
