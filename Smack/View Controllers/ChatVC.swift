@@ -54,9 +54,24 @@ class ChatVC: UIViewController {
     func onLoginGetMessages(){
         MessageService.instance.findAllChannel(completion: { (success) in
             if success{
-                
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateNameWithChannel()
+                }else {
+                    self.channelNameLbl.text = "No channels yet !"
+                }
             }
         })
+    }
+    
+    func getMessages(){
+        guard  let channelId = MessageService.instance.selectedChannel?.id else { return }
+        
+        MessageService.instance.getAllMessageByChannel(channelId: channelId) { (success) in
+            if success {
+                print("get messages success")
+            }
+        }
     }
     
     @objc func channelSelected(_ notif : Notification){
@@ -67,6 +82,8 @@ class ChatVC: UIViewController {
         let channelName = MessageService.instance.selectedChannel?.channelName ?? ""
         
         channelNameLbl.text = "#\(channelName)"
+        
+        getMessages()
     }
     
     @IBAction func sendMessagePressed(_ sender: UIButton) {
