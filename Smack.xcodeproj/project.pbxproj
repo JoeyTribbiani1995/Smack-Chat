@@ -30,6 +30,7 @@
 		D79B09F32067BA5900C097EA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F22067BA5900C097EA /* ChatVC.swift */; };
 		D79B09F52067BA6E00C097EA /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B09F42067BA6E00C097EA /* ChannelVC.swift */; };
 		D7AA1BC72069DF2F007C2343 /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */; };
+		D7BCD69620708A87007CEA41 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BCD69520708A87007CEA41 /* MessageCell.swift */; };
 		D7C21445206FB0F500816EDF /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */; };
 		D7C386C3206A1A6B00BF0461 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C386C2206A1A6B00BF0461 /* UserDataService.swift */; };
 		D7C386C4206A1B2500BF0461 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C386C5206A1B2500BF0461 /* Alamofire.framework */; };
@@ -71,6 +72,7 @@
 		D79B09F22067BA5900C097EA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		D79B09F42067BA6E00C097EA /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		D7AA1BC62069DF2F007C2343 /* CustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
+		D7BCD69520708A87007CEA41 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		D7C386C2206A1A6B00BF0461 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		D7C386C5206A1B2500BF0461 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 				D7573620206B3D490021EB85 /* CircleImage.swift */,
 				D77EC341206CA0C100BB1469 /* ChannelCell.swift */,
 				D7C21444206FB0F500816EDF /* KeyboardBoundView.swift */,
+				D7BCD69520708A87007CEA41 /* MessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				D77EC342206CA0C100BB1469 /* ChannelCell.swift in Sources */,
 				D729CB2A2067D7010038F359 /* GrandientView.swift in Sources */,
 				D757361D206B2A7C0021EB85 /* AvatarPickerVC.swift in Sources */,
+				D7BCD69620708A87007CEA41 /* MessageCell.swift in Sources */,
 				D79B09F52067BA6E00C097EA /* ChannelVC.swift in Sources */,
 				D74384D6206F8BAE003F8880 /* Message.swift in Sources */,
 				D7573621206B3D490021EB85 /* CircleImage.swift in Sources */,
