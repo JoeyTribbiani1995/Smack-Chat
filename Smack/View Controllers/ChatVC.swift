@@ -15,6 +15,10 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var typingUserLbl: UILabel!
+    @IBOutlet weak var sendMessageBtn: UIButton!
+    
+    var isTyping = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +92,7 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
             }
         }
             
-        
+       sendMessageBtn.isHidden = true
     }
     
     @objc func userDataDidChange(_ notif : Notification){
@@ -175,11 +179,20 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
     @IBAction func messageEditing(_ sender: UITextField) {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+        
         if messageTxt.text == "" {
+            isTyping = false
+            sendMessageBtn.isHidden = true
+    
             SocketService.instance.socket.emit("stopType", UserDataService.instance.name,channelId)
         }else {
+            if isTyping == false {
+                sendMessageBtn.isHidden = false
+            }
+            isTyping = true
             SocketService.instance.socket.emit("startType", UserDataService.instance.name,channelId)
         }
         

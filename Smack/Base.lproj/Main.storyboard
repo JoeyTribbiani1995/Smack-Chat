@@ -173,6 +173,7 @@
                         <outlet property="channelNameLbl" destination="htM-yK-qsb" id="ewr-Dw-SRV"/>
                         <outlet property="menuBtn" destination="UOz-RP-VE2" id="6Hd-cb-jDm"/>
                         <outlet property="messageTxt" destination="zB7-XX-SnX" id="Bch-be-euv"/>
+                        <outlet property="sendMessageBtn" destination="Fy2-1o-abW" id="C0H-T7-Y1t"/>
                         <outlet property="tableView" destination="VZG-fw-BV7" id="Fu4-fl-7X6"/>
                         <outlet property="typingUserLbl" destination="LvK-QQ-dYU" id="S6m-QL-6MC"/>
                     </connections>
