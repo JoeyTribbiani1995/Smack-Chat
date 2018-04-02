@@ -14,6 +14,7 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
     @IBOutlet weak var channelNameLbl: UILabel!
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var typingUserLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,47 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        SocketService.instance.getMessage { (newMessage) in
+            if newMessage.channelId == MessageService.instance.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.messages.append(newMessage)
+                self.tableView.reloadData()
+                if MessageService.instance.messages.count > 0 {
+                    
+                }
+            }
+            
+        }
+        
+        SocketService.instance.getTypingUsers { (typingUsers) in
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            
+            var names = ""
+            var numberOfTypers = 0
+            
+            for (typingUser, channel) in typingUsers {
+                if typingUser != UserDataService.instance.name && channel == channelId {
+                    if names == "" {
+                        names = typingUser
+                    }else {
+                        names = "\(names) \(typingUser)"
+                    }
+                    numberOfTypers += 1
+                }
+            }
+            
+            if numberOfTypers > 0 && AuthService.instance.isLoggedIn == true {
+                var verb = "is"
+                if numberOfTypers > 1 {
+                    verb = "are"
+                }
+                
+                self.typingUserLbl.text = "\(names) \(verb) typing a message"
+            }else {
+                self.typingUserLbl.text = ""
+            }
+        }
+            
+        
     }
     
     @objc func userDataDidChange(_ notif : Notification){
@@ -78,7 +120,7 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
         MessageService.instance.getAllMessageByChannel(channelId: channelId) { (success) in
             if success {
                 self.tableView.reloadData()
-                print("get messages success")
+                print("get messages success------------------")
             }
         }
     }
@@ -103,7 +145,9 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
             SocketService.instance.addMessage(messageBody: mess, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
                 if success {
                     self.messageTxt.text = ""
-                    self.messageTxt.resignFirstResponder() // return before 
+                    self.messageTxt.resignFirstResponder() // return before
+                    
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.id)
                 }
             })
         }
@@ -130,6 +174,15 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
         }else{
             return UITableViewCell()
         }
+    }
+    @IBAction func messageEditing(_ sender: UITextField) {
+        guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+        if messageTxt.text == "" {
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name,channelId)
+        }else {
+            SocketService.instance.socket.emit("startType", UserDataService.instance.name,channelId)
+        }
+        
     }
     
     

@@ -17,7 +17,7 @@ class SocketService: NSObject {
         super.init()
     }
     
-    let manager = SocketManager(socketURL: URL(string : BASE_URL)!)
+    let manager = SocketManager(socketURL: URL(string : BASE_URL)!, config: [.log(true), .compress])
     var socket : SocketIOClient!
 
     
@@ -33,7 +33,6 @@ class SocketService: NSObject {
     }
     
     func addChannel(channelName : String , channelDescription : String , completion : @escaping CompletionHandler){
-        let socket = SocketService.instance.manager.defaultSocket
         socket.emit("newChannel", channelDescription,channelName)
         print("new channel ------------------")
         completion(true)
@@ -62,7 +61,33 @@ class SocketService: NSObject {
         completion(true)
     }
     
+    func getMessage(completion : @escaping (_ newMessage : Message) -> Void){
+        socket = SocketService.instance.manager.defaultSocket
+        socket.on("messageCreated") { (dataArray, ack) -> Void in
+
+            guard let messBody = dataArray[0] as? String else { return }
+            guard let channelId = dataArray[2] as? String else { return }
+            guard let userName = dataArray[3] as? String else { return }
+            guard let userAvatar = dataArray[4] as? String else { return }
+            guard let userAvatarColor = dataArray[5] as? String else { return }
+            guard let id = dataArray[6] as? String else { return }
+            guard let timeStamp = dataArray[7] as? String else { return }
+
+
+            let newMessage = Message(message: messBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+
+            completion(newMessage)
+
+        }
+    }
     
+    func getTypingUsers(_ completionHandler : @escaping (_ typingUser : [String : String]) -> Void){
+        socket = SocketService.instance.manager.defaultSocket
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String:String] else {return}
+            completionHandler(typingUsers)
+        }
+    }
     
     
     

@@ -68,7 +68,6 @@ class MessageService {
                         let timeStamp = item["timeStamp"].stringValue
                         
                         let messageTemp = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id:id, timeStamp: timeStamp)
-                        print("-------get message : ",messageTemp.message)
                         self.messages.append(messageTemp)
                         
                     }
