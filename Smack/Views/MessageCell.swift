@@ -26,14 +26,26 @@ class MessageCell: UITableViewCell {
         userNameLbl.text = message.userName
         userImageView.image = UIImage(named : message.userAvatar)
         userImageView.backgroundColor = UserDataService.instance.returnColor(components: message.userAvatarColor)
-      //  updateTimeView(date: message.timeStamp)
         messageLbl.text = message.message
+        
+        //2017-07-13T21:49:25.590Z
+        guard var isoDate = message.timeStamp else { return }
+        
+        let end = isoDate.index(isoDate.endIndex, offsetBy: -5)
+        isoDate = isoDate.substring(to: end)
+        //2017-07-13T21:49:25
+        
+        let isoFormatter = ISO8601DateFormatter()
+        let chatDate = isoFormatter.date(from : isoDate.appending("Z"))
+        //2017-07-13T21:49:25Z
+        
+        let newFormatter = DateFormatter()
+        newFormatter.dateFormat = "MMM d , h:mm a"
+        
+        if let finalDate = chatDate {
+            let getDate = newFormatter.string(from: finalDate)
+            timeStampLbl.text = getDate
+        }
+        
     }
-    
-    func updateTimeView(date : String){
-        let dataForMatter = DateFormatter()
-        dataForMatter.timeStyle = .short
-       // timeStampLbl.text = dataForMatter.string(from:date)
-    }
-
 }

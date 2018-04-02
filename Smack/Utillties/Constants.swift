@@ -56,5 +56,3 @@ let NOTIF_CHANNELS_LOADED = Notification.Name("channelsloaded")
 let NOTIF_CHANNELS_SELECTED = Notification.Name("channelselected")
 
 
-
-

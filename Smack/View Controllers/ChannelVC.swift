@@ -129,13 +129,4 @@ class ChannelVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
         //animated go to chatvc 
         self.revealViewController().revealToggle(animated: true)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

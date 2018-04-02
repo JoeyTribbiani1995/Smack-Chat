@@ -40,6 +40,4 @@ class ChannelCell: UITableViewCell {
         }
         
     }
-    
-
 }

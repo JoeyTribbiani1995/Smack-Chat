@@ -27,5 +27,4 @@ class CircleImage: UIImageView {
         
         setupView()
     }
-
 }

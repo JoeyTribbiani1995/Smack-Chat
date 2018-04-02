@@ -198,6 +198,4 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
         }
         
     }
-    
-    
 }

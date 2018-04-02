@@ -31,6 +31,4 @@ class CustomBtn: UIButton {
     func setupView(){
         self.layer.cornerRadius = cornerRadius
     }
-    
-   
 }

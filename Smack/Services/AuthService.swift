@@ -143,21 +143,5 @@ class AuthService {
         print("----------------------- : > set user find user by email  ",id, name)
         UserDataService.instance.setUserData(id: id, avatarColor: color, avatarName: avatar, email: email, name: name)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
 }

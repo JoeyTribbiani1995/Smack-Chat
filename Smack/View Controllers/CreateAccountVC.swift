@@ -106,6 +106,4 @@ class CreateAccountVC: UIViewController {
    @objc func handleTap(){
         view.endEditing(true)
     }
-    
-    
 }

@@ -64,7 +64,4 @@ class LoginVC: UIViewController {
     @objc func handleTap(){
         view.endEditing(true)
     }
-    
-    
-
 }
