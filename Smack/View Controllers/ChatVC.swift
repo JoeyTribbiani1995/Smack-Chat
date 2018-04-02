@@ -27,7 +27,7 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
         view.bindToKeyboard()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
         view.addGestureRecognizer(tap)
-        
+        sendMessageBtn.isHidden = true
         
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -57,11 +57,14 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
                 MessageService.instance.messages.append(newMessage)
                 self.tableView.reloadData()
                 if MessageService.instance.messages.count > 0 {
-                    
+                    //scroll bottom cell in table view
+                    let endIndex = IndexPath(row: MessageService.instance.messages.count - 1 , section: 0)
+                    self.tableView.scrollToRow(at: endIndex, at: .bottom, animated: false)
                 }
             }
-            
+
         }
+       
         
         SocketService.instance.getTypingUsers { (typingUsers) in
             guard let channelId = MessageService.instance.selectedChannel?.id else { return }
@@ -91,8 +94,6 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
                 self.typingUserLbl.text = ""
             }
         }
-            
-       sendMessageBtn.isHidden = true
     }
     
     @objc func userDataDidChange(_ notif : Notification){
@@ -150,7 +151,7 @@ class ChatVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
                 if success {
                     self.messageTxt.text = ""
                     self.messageTxt.resignFirstResponder() // return before
-                    
+                   
                     SocketService.instance.socket.emit("stopType", UserDataService.instance.id)
                 }
             })
